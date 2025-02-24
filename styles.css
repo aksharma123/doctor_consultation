@@ -46,6 +46,15 @@
     font-weight: 500;
     font-style: normal;
     font-size: 2.5em;
+
+}
+
+.logo_heading{
+    transition: transform 0.5s ease-in-out;;
+}
+
+.logo_heading:hover{
+    transform: scale(1.2);
 }
 
 .topbar button{
@@ -122,6 +131,41 @@
     font-size: large;
 }
 
+.home:hover{
+    text-decoration: underline;
+    transform: scale(0.8);
+}
+
+.home{
+    transition:all 0.2s ease-in-out;
+}
+
+.about:hover{
+    text-decoration: underline;
+    transform: scale(0.8);
+}
+
+.about{
+    transition:all 0.2s ease-in-out;
+}
+
+.contact:hover{
+    text-decoration: underline;
+    transform: scale(0.8);
+}
+
+.contact{
+    transition:all 0.2s ease-in-out;
+}
+
+.services:hover{
+    text-decoration: underline;
+    transform: scale(0.8);
+}
+
+.services{
+    transition:all 0.2s ease-in-out;
+}
 /* hero section */
 
 .banner{
@@ -152,12 +196,34 @@
     font-size: 3em;
     font-weight:500;
     line-height: 0.5;
+    animation-name: slide_right;
+    animation-duration: 3s;
+    animation-delay: 0ms;
+    animation-iteration-count: 1;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide_right{
+    from{
+        transform:translateX(50%)
+    }
+
+    to{
+        transform:translateX(0%)
+    }
+}
 .para_section span{
     color: #FFFFFF;
     font-size: 3em;
     font-weight: 900;
+    animation-name: slide_right;
+    animation-duration: 3s;
+    animation-delay: 80ms;
+    animation-iteration-count: 1;
 }
 
 .para_section p{
@@ -165,6 +231,17 @@
     font-weight: 300;
     font-size: large;
     line-height: normal;
+    animation-name: fadeIn;
+    animation-duration: 5s;
+    animation-delay: 0ms;
+    animation-iteration-count: 1;
+}
+
+.images_section img{
+    animation-name: fadeIn;
+    animation-duration: 4s;
+    animation-delay: 0ms;
+    animation-iteration-count: 1;
 }
 
 /* our section */
@@ -185,6 +262,7 @@
     gap: 100px;
     width: 100%;
     height: auto;
+
 }
 
 .cardx{
@@ -193,6 +271,9 @@
     border: 3.5px solid #1D76EA;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation-name: appear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
 }
 
 .cardx:hover{
@@ -267,12 +348,18 @@
     font-size: 3em;
     font-weight:500;
     line-height: 0.5;
+    animation-name: appear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
 }
 
 .right span{
     color: #1D76EA;
     font-size: 3em;
     font-weight: 900;
+    animation-name: appear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
 }
 
 .right p{
@@ -280,6 +367,33 @@
     font-weight: 300;
     font-size: large;
     line-height: normal;
+}
+
+.left img{
+    animation: slide_left;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
+}
+
+@keyframes slide_left{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to{
+       opacity: 1;
+        scale: 1;
+    }
 }
 
 /* footer section */
